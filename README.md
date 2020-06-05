@@ -14,6 +14,4 @@ You can now open Cypress by running:
 
 When the above command is run for the first time, Cypress adds folders with example tests and fixtures.
 
-`git tag setup-complete`
-
-`git push origin setup-complete`
+`git tag setup-complete; git push origin setup-complete`
