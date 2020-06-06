@@ -163,3 +163,6 @@ Checkbox should be checked.
 ```js
 cy.get("#checkBoxOption1").check().should("be.checked").and('have.value', 'option1');
 ```
+
+## Static Dropdown
+
