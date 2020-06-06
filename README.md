@@ -46,9 +46,9 @@ Adding config entries in `cypress.json` will override the default configurations
 
 Example:
 
-class selector
-id selector
-attribute selector
+class selector ex: `.product`  
+id selector ex: `#name`  
+attribute selector `input[data-id=hjuh78-oiujh7-987uhy-iiuyty7]`
 
 Cypress Plugin to Locate Elements
 
@@ -89,26 +89,26 @@ Cypress automatically runs the test when we save the test.
 ## Parent/ Child Chaining
 
 ```js
-cy.get('.products').find('.product').should('have.length', 4);
+cy.get(".products").find(".product").should("have.length", 4);
 ```
 
 ## Iterating Array of Elements
 
 ```js
-    // Add to Cart, product by name
-    // Ex: Add Cashew to the Cart
-    cy.get(".products")
-      .find(".product")
-      .each((element) => {
-        cy.wrap(element)
-          .find(".product-name")
-          .invoke("text")
-          .then((text) => {
-            if (text.toLowerCase().includes("cashew")) {
-              cy.wrap(element).contains("ADD TO CART").click();
-            }
-          });
+// Add to Cart, product by name
+// Ex: Add Cashew to the Cart
+cy.get(".products")
+  .find(".product")
+  .each((element) => {
+    cy.wrap(element)
+      .find(".product-name")
+      .invoke("text")
+      .then((text) => {
+        if (text.toLowerCase().includes("cashew")) {
+          cy.wrap(element).contains("ADD TO CART").click();
+        }
       });
+  });
 ```
 
 ## Async and Promise Handling
@@ -127,8 +127,8 @@ cy.log();
 ## Alias
 
 ```js
-    cy.get(".products .product").as("products");
-    cy.get("@products").should("have.length", 4);
+cy.get(".products .product").as("products");
+cy.get("@products").should("have.length", 4);
 ```
 
 ## Console log
@@ -156,3 +156,10 @@ cy().then(() => {
 });
 ```
 
+## Checkbox
+
+Checkbox should be checked.
+
+```js
+cy.get("#checkBoxOption1").check().should("be.checked").and('have.value', 'option1');
+```
