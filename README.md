@@ -161,8 +161,39 @@ cy().then(() => {
 Checkbox should be checked.
 
 ```js
-cy.get("#checkBoxOption1").check().should("be.checked").and('have.value', 'option1');
+cy.get("#checkBoxOption1")
+  .check()
+  .should("be.checked")
+  .and("have.value", "option1");
 ```
 
-## Static Dropdown
+## Static Dropdown and Dynamic Dropdown
+
+Static Dropdown
+
+```js
+cy.get("select").select("option2").should("have.value", "option2");
+```
+
+Dynamic Dropdown
+
+```js
+cy.get("#autocomplete").type("United Kingdom");
+cy.get(".ui-autocomplete")
+  .get(".ui-menu-item-wrapper")
+  .each((element) => {
+    cy.log(element);
+    cy.wrap(element)
+      .invoke("text")
+      .then((text) => {
+        cy.log(text);
+        if (text === "United Kingdom (UK)") {
+          cy.get(element).click();
+        }
+      });
+  });
+cy.get("#autocomplete").should("have.value", "United Kingdom (UK)");
+```
+
+## Visible and Invisible Elements
 
