@@ -40,9 +40,9 @@ Adding config entries in `cypress.json` will override the default configurations
 
 # Getting Started
 
-## Locating Elements
+# Locating Elements
 
-### CSS Selectors (only?)
+## CSS Selectors (only?)
 
 Example:
 
@@ -52,3 +52,32 @@ attribute selector
 
 Cypress Plugin to Locate Elements
 
+## Intellisense
+
+Use tripple slash directives which is a TypeScript concept. It tells TypeScript compiler to include additional files in the compilation process.
+
+`/// <reference types="Cypress" />`
+
+## Assertion
+
+Cypress comes with its own assertion methods.
+
+Example:
+
+Following code gets and asserts that there are 4 products on the page.
+
+```js
+cy.get(".products .product").should("have.length", 4);
+```
+
+## Auto Run
+
+Cypress automatically runs the test when we save the test.
+
+## Time Travel
+
+## Before & After Screenshots
+
+## Invisible Elements Message
+
+One or more elements are not visible
