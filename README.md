@@ -197,3 +197,13 @@ cy.get("#autocomplete").should("have.value", "United Kingdom (UK)");
 
 ## Visible and Invisible Elements
 
+## Radio Buttons
+
+## Alert Popup
+
+Cypress Auto-Accepts popups.
+
+## Browser Events
+
+Cypress can listen to browser events.
+We can get the `text` of alert or conirm popups and validate them.
