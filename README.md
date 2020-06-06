@@ -42,7 +42,7 @@ Adding config entries in `cypress.json` will override the default configurations
 
 # Locating Elements
 
-## CSS Selectors (only?)
+## CSS & JQery Selectors
 
 Example:
 
@@ -58,7 +58,7 @@ Use tripple slash directives which is a TypeScript concept. It tells TypeScript 
 
 `/// <reference types="Cypress" />`
 
-## Assertion
+## Assertions
 
 Cypress comes with its own assertion methods.
 
@@ -78,6 +78,18 @@ Cypress automatically runs the test when we save the test.
 
 ## Before & After Screenshots
 
-## Invisible Elements Message
+## Debugging
 
-One or more elements are not visible
+- One or more elements are not visible
+
+- Clear error messages
+
+- Line number where the test failed
+
+## Parent/ Child Chaining
+
+```js
+cy.get('.products').find('.product').should('have.length', 4);
+```
+
+
