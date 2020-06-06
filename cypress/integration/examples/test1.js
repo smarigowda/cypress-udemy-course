@@ -9,5 +9,8 @@ describe("my first cypress test", function () {
     cy.get(".product:visible").should("have.length", 4);
     cy.get('.products').find('.product').should('have.length', 4);
 
+    // cy.get('.products').find('.product').eq(1).find('.product-action button').click();
+    cy.get('.products').find('.product').eq(1).contains('ADD TO CART').click();
+
   });
 });
