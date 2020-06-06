@@ -12,16 +12,16 @@ describe("my first cypress test", function () {
     // cy.get('.products').find('.product').eq(1).find('.product-action button').click();
     // cy.get('.products').find('.product').eq(1).contains('ADD TO CART').click();
 
-    // Add Carrot to the Cart
+    // Add product by name to the Cart
     cy.get(".products")
       .find(".product")
       .each((element) => {
-        cy.get(element)
+        cy.wrap(element)
           .find(".product-name")
           .invoke("text")
           .then((text) => {
-            if (text.toLowerCase().indexOf("carrot") >= 0) {
-              cy.get(element).contains("ADD TO CART").click();
+            if (text.toLowerCase().includes("cashew")) {
+              cy.wrap(element).contains("ADD TO CART").click();
             }
           });
       });
