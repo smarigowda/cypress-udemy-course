@@ -207,3 +207,8 @@ Cypress Auto-Accepts popups.
 
 Cypress can listen to browser events.
 We can get the `text` of alert or conirm popups and validate them.
+
+## Child Tabs
+
+Remove target attribute, so that the browser does not open a new tab.
+
