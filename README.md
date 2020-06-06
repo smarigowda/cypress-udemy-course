@@ -24,8 +24,14 @@ Example:
 
 `npm run cy:run -- --headed`
 
+`git tag run-test-on-commandline; git push origin run-test-on-commandline`
 
+To run on a specific browsers:
 
+`npm run cy:run -- --headed --browser=chrome`
 
+`npm run cy:run -- --headed --browser=firefox`
+
+`npm run cy:run -- --headed --browser=edge`
 
 
