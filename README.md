@@ -1,4 +1,4 @@
-# Notes
+# Onboarding
 
 ## Install and Setup
 
@@ -26,7 +26,7 @@ Example:
 
 `git tag run-test-on-commandline; git push origin run-test-on-commandline`
 
-To run on a specific browsers:
+## Run on a specific browsers
 
 `npm run cy:run -- --headed --browser=chrome`
 
@@ -34,4 +34,21 @@ To run on a specific browsers:
 
 `npm run cy:run -- --headed --browser=edge`
 
+## Overriding default configurations
+
+Adding config entries in `cypress.json` will override the default configurations.
+
+# Getting Started
+
+## Locating Elements
+
+### CSS Selectors (only?)
+
+Example:
+
+class selector
+id selector
+attribute selector
+
+Cypress Plugin to Locate Elements
 
