@@ -92,4 +92,67 @@ Cypress automatically runs the test when we save the test.
 cy.get('.products').find('.product').should('have.length', 4);
 ```
 
+## Iterating Array of Elements
+
+```js
+    // Add to Cart, product by name
+    // Ex: Add Cashew to the Cart
+    cy.get(".products")
+      .find(".product")
+      .each((element) => {
+        cy.wrap(element)
+          .find(".product-name")
+          .invoke("text")
+          .then((text) => {
+            if (text.toLowerCase().includes("cashew")) {
+              cy.wrap(element).contains("ADD TO CART").click();
+            }
+          });
+      });
+```
+
+## Async and Promise Handling
+
+- Non Cypress commands can not resolve promise by themselves
+- text() example
+- text method can be used on `.find('.class')`
+- but, use `invoke('text').then(callbackFn)` instead
+
+## Logging
+
+```js
+cy.log();
+```
+
+## Alias
+
+```js
+    cy.get(".products .product").as("products");
+    cy.get("@products").should("have.length", 4);
+```
+
+## Console log
+
+Console logs should be used inside `.then()` to ensure it is executed in proper sequence.
+
+Following code does not gaurantee that `console.log` is executed at the end. You will see the console log printed into console (dev tools) while the test is still running.
+
+```js
+cy.get();
+cy...
+cy...
+console.log('end of test'); // this gets exected first, as this is not a cypress command
+```
+
+How can I use the `console.log` then ?
+
+```js
+cy.get();
+cy...
+cy...
+cy...
+cy().then(() => {
+    console.log('end of test'); // this gets exected after all the previous steps are completed.
+});
+```
 
