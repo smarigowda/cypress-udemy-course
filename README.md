@@ -227,7 +227,7 @@ Use jquery `show()` method to display the hidden elements
 
 Force click using `{ force: true }`
 
-## Frames and Child Windows
+## Child Windows
 
 Child windows are not supported in Cypress.
 
@@ -235,4 +235,6 @@ Use `cy.get()` and open the page in the same browser window.
 
 Cypress does not support visiting Cross Domain url.
 
+## Frames
 
+Install npm package `cypress-iframe` 

@@ -1,5 +1,3 @@
-describe('test suite', () => {
-    it('test case', () => {
-
-    })
-})
+describe("", () => {
+  it("", () => {});
+});
