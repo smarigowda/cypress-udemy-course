@@ -28,7 +28,8 @@ describe("Hooks Demo", function () {
     );
     cy.get("#inlineRadio3").should("be.disabled");
     cy.get("a").contains("Shop").click();
-    cy.selectProduct("Blackberry");
-    cy.selectProduct("Samsung");
+    this.data.productNames.forEach((name) => {
+      cy.selectProduct(name);
+    });
   });
 });

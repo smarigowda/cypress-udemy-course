@@ -40,7 +40,7 @@ Adding config entries in `cypress.json` will override the default configurations
 
 # Getting Started
 
-# Locating Elements
+## Locating Elements
 
 ## CSS & JQery Selectors
 
@@ -239,9 +239,9 @@ Cypress does not support visiting Cross Domain url.
 
 Install npm package `cypress-iframe`
 
-## Framework Building
+# Framework Building
 
-### Hooks
+## Hooks
 
 `before()`
 
@@ -264,7 +264,7 @@ Install npm package `cypress-iframe`
 
 - runs after each of the test step. That is, after each of the `it` block
 
-### Fixture
+## Fixture
 
 ```js
 cy.fixture("example").then(function (data) {
