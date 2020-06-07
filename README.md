@@ -303,3 +303,7 @@ declare namespace Cypress {
   }
 }
 ```
+
+## Debugging & Pause
+
+`cy.pause()` can be used to pause the test. You can then **resume** or **step** through the test

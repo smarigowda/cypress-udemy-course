@@ -27,6 +27,7 @@ describe("Hooks Demo", function () {
       2
     );
     cy.get("#inlineRadio3").should("be.disabled");
+    cy.pause();
     cy.get("a").contains("Shop").click();
     this.data.productNames.forEach((name) => {
       cy.selectProduct(name);
