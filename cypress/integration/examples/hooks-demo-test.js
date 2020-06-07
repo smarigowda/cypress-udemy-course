@@ -12,6 +12,8 @@ describe("Hooks Demo", function () {
   it("Step 1", function () {
     cy.get('input[name="name"]:nth-child(2)').type(this.data.name);
     cy.get("#exampleFormControlSelect1").select(this.data.gender);
+
+    //* Another Approach
     // cy.get('input[name="name"]:nth-child(1)').then(element => {
     //   expect(element.val()).to.equal(this.data.name);
     // });
@@ -26,10 +28,7 @@ describe("Hooks Demo", function () {
     );
     cy.get("#inlineRadio3").should("be.disabled");
     cy.get("a").contains("Shop").click();
-    cy.get("h4.card-title").each((element, index) => {
-      if (element.text().includes("Blackberry")) {
-        cy.get("button.btn.btn-info").eq(index).click();
-      }
-    });
+    cy.selectProduct("Blackberry");
+    cy.selectProduct("Samsung");
   });
 });

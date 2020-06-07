@@ -286,3 +286,20 @@ cy.fixture("example").then(function (data) {
     - iterate over them to find the specific product
     - Grab all Add buttons and then use the index to get the Add button of the specific product
     - Click on it
+
+## Custom Commands + Intellisense
+
+Intelllisense for custom commands can be achieved by adding type definition to `globals.d.ts`
+
+```ts
+declare namespace Cypress {
+  interface Chainable<Subject> {
+    /**
+     * Add a product to Cart by product name
+     * @example
+     * cy.selectProduct('product name')
+     */
+    selectProduct(productName: string): Chainable<any>;
+  }
+}
+```
