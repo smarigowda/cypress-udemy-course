@@ -220,3 +220,9 @@ The command `cy.go()` can be used to go backward or forward in a web page.
 ## Web Tables
 
 `.each()` command can be used to iterate through an array of web elements, `next()` method can be used to get the next element, `eq(index)` can be used to get the specific row.
+
+## Mouse Over/ Popup
+
+Use jquery `show()` method to display the hidden elements
+
+Force click using `{ force: true }`
