@@ -237,4 +237,29 @@ Cypress does not support visiting Cross Domain url.
 
 ## Frames
 
-Install npm package `cypress-iframe` 
+Install npm package `cypress-iframe`
+
+## Framework Building
+
+### Hooks
+
+`before()`
+
+- Runs once before the test run. That is before any of the `it` blocks are run
+- Setup data for the test
+- Launch the browser
+- Open connection to database
+
+`after()`
+
+- Runs once after the test. That is after all the `it` blocks are run
+- Close the browser
+- Close db connection
+
+`beforeEach()`
+
+- runs before each of the test step. That is before each of the `it` block
+
+`afterEach()`
+
+- runs after each of the test step. That is, after each of the `it` block
