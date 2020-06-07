@@ -48,7 +48,8 @@ Example:
 
 class selector ex: `.product`  
 id selector ex: `#name`  
-attribute selector `input[data-id=hjuh78-oiujh7-987uhy-iiuyty7]`
+attribute selector `input[data-id=hjuh78-oiujh7-987uhy-iiuyty7]`  
+nth-child selector `td:nth-child(2)`
 
 Cypress Plugin to Locate Elements
 
@@ -214,5 +215,36 @@ Remove target attribute using jquery function, so that the page does not open a 
 
 ## Browser Navigation
 
+The command `cy.go()` can be used to go backward or forward in a web page.
 
+## Web Tables
 
+`.each()` command can be used to iterate through an array of web elements.
+
+Get the price of a specific course
+
+```js
+/// <reference types="Cypress" />
+describe("Web Table Example", () => {
+  it("Select specific row and get the price", () => {
+    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.get("table#product")
+      .get("tr+tr") // get all the rows except the first row, OWL selector
+      .each((row) => {
+        cy.get(row)
+          .find("td:nth-child(2)") // get the second cell scoped within the row
+          .invoke("text")
+          .then((text) => {
+            if (text.includes("REST API Testing with SoapUI")) { // check if the course title matches
+              cy.get(row)
+                .find("td:nth-child(3)") // get the third cell scoped within the row
+                .invoke("text")
+                .then((price) => {
+                  cy.log(`Price of the Course is: ${price}`); // print the price
+                });
+            }
+          });
+      });
+  });
+});
+```
