@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 describe("Web Table Example", () => {
-  it.skip("Select specific row and get the price", () => {
+  it("Select specific row and get the price", () => {
     cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
     cy.get("table#product")
       .get("tr+tr") // get all the rows except the first row, OWL selector
@@ -15,6 +15,7 @@ describe("Web Table Example", () => {
                 .invoke("text")
                 .then((price) => {
                   cy.log(`Price of the Course is: ${price}`);
+                  expect(price).to.equal('35');
                 });
             }
           });
