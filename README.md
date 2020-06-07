@@ -226,3 +226,13 @@ The command `cy.go()` can be used to go backward or forward in a web page.
 Use jquery `show()` method to display the hidden elements
 
 Force click using `{ force: true }`
+
+## Frames and Child Windows
+
+Child windows are not supported in Cypress.
+
+Use `cy.get()` and open the page in the same browser window.
+
+Cypress does not support visiting Cross Domain url.
+
+
