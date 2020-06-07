@@ -1,21 +1,16 @@
-describe("Hooks Demo", () => {
-  before('before block', () => {
-    cy.log('before block')
-    cy.visit('https://rahulshettyacademy.com/angularpractice/');
+describe("Hooks Demo", function () {
+  before("before block", function () {
+    cy.log("before block");
+    cy.fixture("example").then(function (data) {
+      this.data = data; // do not use arrow function
+    });
+    cy.visit("https://rahulshettyacademy.com/angularpractice/");
   });
-  after('after block', () => {
-    cy.log('after  block');
-    cy.get('input[name="name"]:nth-child(2)').type('Santosh');
-    cy.get('#exampleFormControlSelect1').select('Female');
+  after("after block", function () {
+    cy.log("after  block");
   });
-  it("Test Step 1", () => {
-    cy.log('test step 1');
-    
-  });
-  it("Test Step 2", () => {
-    cy.log('test step 1');
-  });
-  it("Test Step 3", () => {
-    cy.log('test step 1');
+  it("test step 1", function () {
+    cy.get('input[name="name"]:nth-child(2)').type(this.data.name);
+    cy.get("#exampleFormControlSelect1").select(this.data.gender);
   });
 });
