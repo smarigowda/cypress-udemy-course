@@ -263,3 +263,11 @@ Install npm package `cypress-iframe`
 `afterEach()`
 
 - runs after each of the test step. That is, after each of the `it` block
+
+### Fixture
+
+```js
+    cy.fixture("example").then(function (data) { // normal function
+      this.data = data;
+    });
+```
