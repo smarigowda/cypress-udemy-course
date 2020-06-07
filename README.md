@@ -267,7 +267,22 @@ Install npm package `cypress-iframe`
 ### Fixture
 
 ```js
-    cy.fixture("example").then(function (data) { // normal function
-      this.data = data;
-    });
+cy.fixture("example").then(function (data) {
+  // normal function
+  this.data = data;
+});
 ```
+
+## Test Steps
+
+- Home Page
+- Shop Page
+  - _Add a product to Cart by product name Solution 1_
+    - grab all products
+    - iterate over them to find the specific product by name
+    - find the Add To Cart button of the product and click on it
+  - _Add a product to Cart by product name Solution 2_
+    - grab all the product names
+    - iterate over them to find the specific product
+    - Grab all Add buttons and then use the index to get the Add button of the specific product
+    - Click on it
