@@ -368,4 +368,43 @@ Cypress.config({ defaultCommandTimeout: 3000 });
 
 ## Environment Variables
 
-Create `env` propery inside cypress.json.
+- Needed by all or most of the tests ex: `url`, `user data`, `environment specific data`
+- Dev, Test, Staging, Production
+- Accessible to all tests
+- Create `env` propery inside cypress.json.
+
+```js
+{
+  "defaultCommandTimeout": 10000,
+  "env": {
+    "baseUrl": "https://rahulshettyacademy.com"
+  }
+}
+```
+
+- We can also set the environment variable from command line.
+
+```bash
+./node_modules/.bin/cypress run --headed --env baseUrl=http://google.com --spec cypress/integration/examples/framework-demo-test.js
+```
+
+- Test fails due wrong base url. This proves that the env var set on command line takes precedence over the env var set in `cypress.json`
+
+- Command line with proper baseUrl.
+
+```bash
+./node_modules/.bin/cypress run --headed --env baseUrl=https://rahulshettyacademy.com --spec cypress/integration/examples/framework-demo-test.js
+```
+
+## Screenshots on Failure
+
+- Cypress takes screenshot when test failes. No custom code required
+
+## Dashboard
+
+- Login to Dashboard
+- Can use GitHub account
+- Or Google account
+- Setup a Project
+
+`./node_modules/.bin/cypress run --record --key <provide key here>`
