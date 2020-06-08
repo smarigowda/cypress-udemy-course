@@ -400,11 +400,19 @@ Cypress.config({ defaultCommandTimeout: 3000 });
 
 - Cypress takes screenshot when test failes. No custom code required
 
-## Dashboard
+## Cypress Dashboard
 
 - Login to Dashboard
 - Can use GitHub account
 - Or Google account
 - Setup a Project
 
-`./node_modules/.bin/cypress run --record --key <provide key here>`
+- Run all tests
+
+`./node_modules/.bin/cypress run --record --key < provide key here >`
+
+- Run specific test
+
+`./node_modules/.bin/cypress run --record --key < provide key here > --spec cypress/integration/examples/framework-demo-test.js`
+
+## Mochaawesome Reporter
