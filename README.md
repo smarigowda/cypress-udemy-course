@@ -416,3 +416,51 @@ Cypress.config({ defaultCommandTimeout: 3000 });
 `./node_modules/.bin/cypress run --record --key < provide key here > --spec cypress/integration/examples/framework-demo-test.js`
 
 ## Mochaawesome Reporter
+
+- Install npm packages
+- `npm install --save-dev mochawesome`
+- `npm install --save-dev mocha@5.2.0`
+- Tell Cypress that you are using `mochawesome` reporter
+- Specify package name in cypress config
+
+- Run a test
+
+`./node_modules/.bin/cypress run --reporter mochawesome --spec cypress/integration/examples/framework-demo-test.js`
+
+- Run all the tests
+
+`./node_modules/.bin/cypress run --reporter mochawesome`
+
+- Only the last test will be reported in mochawesome reporter
+
+- Add reporter config into cypress.json config file
+
+- Run all the tests
+
+`./node_modules/.bin/cypress run`
+
+- Still the same outcome
+
+- Add reporter options to skip the html report generation, but save individual json files
+
+```js
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
+```
+
+- Run all the tests
+
+`./node_modules/.bin/cypress run`
+
+- Combine all the json files using the mochawesome-merge utility
+
+`npx mochawesome-merge "cypress/results/*.json" > mochawesome.json`
+
+- Generate a combined HTML report from the mochawesome.json file using the https://github.com/adamgruber/mochawesome-report-generator
+
+`npx marge mochawesome.json`

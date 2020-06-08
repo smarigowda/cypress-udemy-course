@@ -3,5 +3,12 @@
   "env": {
     "baseUrl": "https://rahulshettyacademy.com"
   },
-  "projectId": "fjiso1"
+  "projectId": "fjiso1",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
 }

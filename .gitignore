@@ -1,3 +1,6 @@
 node_modules
 *.mp4
 cypress/videos/
+results/
+mochawesome-report/
+
