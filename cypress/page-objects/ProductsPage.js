@@ -1,6 +1,7 @@
 export default class ProductsPage {
   totalSelector = "tr td:nth-child(4) strong";
   grandTotalSelector = "h3 strong";
+  checkoutSelector = ".btn.btn-success";
   sum = 0;
   open() {
     cy.get("a").contains("Shop").click();
@@ -34,6 +35,10 @@ export default class ProductsPage {
           expect(this.sum).to.equal(grandTotal);
         });
       });
+    return this;
+  }
+  checkoutToDelivery() {
+    cy.get(this.checkoutSelector).click();
     return this;
   }
 }
