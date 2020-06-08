@@ -329,3 +329,12 @@ homePage
   .verifyFirstNameMinLength()
   .verifyEnterprenuerRadioInputIsDisabled();
 ```
+
+## Products Page, Page Objects
+
+- Added function to verify the sum
+- Added method to checkout to delivery page
+
+## Delivery Page, Page Objects
+
+- Methods added to complete the delivery page inputs and purchase the products
