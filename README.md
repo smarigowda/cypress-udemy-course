@@ -277,15 +277,17 @@ cy.fixture("example").then(function (data) {
 
 - Home Page
 - Shop Page
-  - _Add a product to Cart by product name Solution 1_
-    - grab all products
-    - iterate over them to find the specific product by name
-    - find the Add To Cart button of the product and click on it
-  - _Add a product to Cart by product name Solution 2_
-    - grab all the product names
+  - _Add products to Cart by product names_
+    - get product names array from fixture
+    - Loop:
+    - grab all the dom elements (product names)
     - iterate over them to find the specific product
-    - Grab all Add buttons and then use the index to get the Add button of the specific product
-    - Click on it
+    - grab all Add buttons and then use index to get the ADD button of specific product
+    - add to cart by clicking on ADD button
+    - repeat the above steps for the next product in the array
+    - Loop End:
+    - click on Checkout
+    -
 
 ## Custom Commands + Intellisense
 
