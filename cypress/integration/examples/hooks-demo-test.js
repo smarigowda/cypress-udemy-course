@@ -1,5 +1,8 @@
-import HomePage from "../page-objects/HomePage";
+import HomePage from "../../page-objects/HomePage";
+import ProductsPage from "../../page-objects/ProductsPage";
+
 const homePage = new HomePage();
+const productsPage = new ProductsPage();
 
 describe("Hooks Demo", function () {
   before("before block", function () {
@@ -13,7 +16,7 @@ describe("Hooks Demo", function () {
     cy.log("after  block");
   });
   it("Step 1", function () {
-    const { name, gender } = this.data;
+    const { name, gender, productNames } = this.data;
     homePage
       .setFirstName(name)
       .setGender(gender)
@@ -22,9 +25,6 @@ describe("Hooks Demo", function () {
       .verifyEnterprenuerRadioInputIsDisabled();
 
     // cy.pause();
-    cy.get("a").contains("Shop").click();
-    this.data.productNames.forEach((name) => {
-      cy.selectProduct(name);
-    });
+    productsPage.open().addProductsToCart(productNames);
   });
 });
