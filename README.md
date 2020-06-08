@@ -276,6 +276,7 @@ cy.fixture("example").then(function (data) {
 ## Test Steps
 
 - Home Page
+  - Click on Shop link
 - Shop Page
   - _Add products to Cart by product names_
     - get product names array from fixture
@@ -287,7 +288,13 @@ cy.fixture("example").then(function (data) {
     - repeat the above steps for the next product in the array
     - Loop End:
     - click on Checkout
-    -
+- Checkout Page
+  - click on checkout button
+- Delivery Page
+  - fill in delivery location (ex: India)
+  - agree terms and conditions (check the check box)
+  - click on purchase
+  - Verify Successful purchase
 
 ## Custom Commands + Intellisense
 

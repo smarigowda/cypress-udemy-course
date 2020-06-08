@@ -25,6 +25,10 @@ describe("Hooks Demo", function () {
       .verifyEnterprenuerRadioInputIsDisabled();
 
     // cy.pause();
-    productsPage.open().addProductsToCart(productNames);
+    productsPage
+      .open()
+      .addProductsToCart(productNames)
+      .checkout()
+      .verifyTotal();
   });
 });
