@@ -1,3 +1,6 @@
+import HomePage from "../page-objects/HomePage";
+const homePage = new HomePage();
+
 describe("Hooks Demo", function () {
   before("before block", function () {
     cy.log("before block");
@@ -10,24 +13,15 @@ describe("Hooks Demo", function () {
     cy.log("after  block");
   });
   it("Step 1", function () {
-    cy.get('input[name="name"]:nth-child(2)').type(this.data.name);
-    cy.get("#exampleFormControlSelect1").select(this.data.gender);
+    const { name, gender } = this.data;
+    homePage
+      .setFirstName(name)
+      .setGender(gender)
+      .verifyDataBoundInput()
+      .verifyFirstNameMinLength(2)
+      .verifyEnterprenuerRadioInputIsDisabled();
 
-    //* Another Approach
-    // cy.get('input[name="name"]:nth-child(1)').then(element => {
-    //   expect(element.val()).to.equal(this.data.name);
-    // });
-    cy.get('input[name="name"]:nth-child(1)').should(
-      "have.value",
-      this.data.name
-    );
-    cy.get('input[name="name"]:nth-child(2)').should(
-      "have.attr",
-      "minlength",
-      2
-    );
-    cy.get("#inlineRadio3").should("be.disabled");
-    cy.pause();
+    // cy.pause();
     cy.get("a").contains("Shop").click();
     this.data.productNames.forEach((name) => {
       cy.selectProduct(name);

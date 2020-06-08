@@ -306,4 +306,17 @@ declare namespace Cypress {
 
 ## Debugging & Pause
 
-`cy.pause()` can be used to pause the test. You can then **resume** or **step** through the test
+`cy.pause()` can be used to pause the test. You can then **resume** or **step** through the test.
+
+We can also use `debugger` (see Cypress docs for more)
+
+## Home Page Page Objects
+
+```js
+homePage
+  .setFirstName(name)
+  .setGender(gender)
+  .verifyDataBoundInput()
+  .verifyFirstNameMinLength()
+  .verifyEnterprenuerRadioInputIsDisabled();
+```
