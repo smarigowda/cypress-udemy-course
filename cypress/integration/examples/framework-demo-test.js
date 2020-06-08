@@ -12,7 +12,8 @@ describe("Hooks Demo", function () {
     cy.fixture("example").then(function (data) {
       this.data = data; // do not use arrow function
     });
-    cy.visit("https://rahulshettyacademy.com/angularpractice/");
+    const { baseUrl } = Cypress.env();
+    homePage.open(baseUrl);
   });
   after("after block", function () {
     cy.log("after  block");

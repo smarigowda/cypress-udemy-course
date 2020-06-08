@@ -273,7 +273,7 @@ cy.fixture("example").then(function (data) {
 });
 ```
 
-## Test Steps
+## Scenario for Framework Building Exercise
 
 - Home Page
   - Click on Shop link
@@ -338,3 +338,34 @@ homePage
 ## Delivery Page, Page Objects
 
 - Methods added to complete the delivery page inputs and purchase the products
+
+## Global/ Test Specific Configuration
+
+Adding config entries to `cypress.json` will override default settings.
+
+Example: Adding below to `cypress.json` will override the default command timeout and sets it to 10 seconds.
+
+```js
+{
+    "defaultCommandTimeout": 10000
+}
+```
+
+We can also override config for a specific test.
+
+```js
+Cypress.config({ defaultCommandTimeout: 3000 });
+```
+
+```js
+  selectDeliveryLocation(country) {
+    Cypress.config({ defaultCommandTimeout: 3000 }); // overiding config for specific test
+    cy.get(this.countrySelector).type(country);
+    cy.get(this.firstSuggestionSelector).click();
+    return this;
+  }
+```
+
+## Environment Variables
+
+Create `env` propery inside cypress.json.

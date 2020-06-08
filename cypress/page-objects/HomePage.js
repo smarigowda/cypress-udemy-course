@@ -5,6 +5,9 @@ export default class HomePage {
   enterprenuerRadioInputSelector = "#inlineRadio3";
   firstName;
 
+  open(baseUrl) {
+    cy.visit(`${baseUrl}/angularpractice/`);
+  }
   setFirstName(name) {
     cy.get(this.firstNameSelector).type(name);
     this.firstName = name;

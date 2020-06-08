@@ -5,6 +5,7 @@ export default class DeliveryPage {
   alertSelector = ".alert";
 
   selectDeliveryLocation(country) {
+    Cypress.config({ defaultCommandTimeout: 3000 }); // overiding config for specific test
     cy.get(this.countrySelector).type(country);
     cy.get(this.firstSuggestionSelector).click();
     return this;
