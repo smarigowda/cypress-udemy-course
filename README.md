@@ -467,12 +467,30 @@ Cypress.config({ defaultCommandTimeout: 3000 });
 
 `npx marge mochawesome.json`
 
-# npm Scripts and Jenkins Integration
+# npm Scripts and CI/ Jenkins Integration
+
+- Commands can be added into scritps section
 
 ```js
   "scripts": {
-    "cy:run": "cypress run",
-    "cy:run:headed": "npm run cy:run -- --headed",
-    "cy:open": "cypress open"
+    "test": "cypress run",
+    "testHeaded": "npm run cy:run -- --headed",
+    "open": "cypress open"
   },
 ```
+
+- Commands are run from command line
+
+`npm run test`
+
+- We can specify a spec from command line on the fly. Separate the spec files by comma (,)
+- Group the test in a folder and use regex
+
+`"greenCartTest": "npm run test -- --spec cypress/integration/examples/green-cart/*"`
+
+## Jenkins
+
+- Download the jar file
+- Run it and follow the instructions
+
+`java -jar jenkins.war`
