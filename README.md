@@ -494,3 +494,77 @@ Cypress.config({ defaultCommandTimeout: 3000 });
 - Run it and follow the instructions
 
 `java -jar jenkins.war`
+
+- Create and configure the job
+- Parameterize the job
+- Choice parameter
+
+```text
+test
+recordDashboardTest
+```
+
+- Execute Shell
+
+```shell
+npm install
+npm run "${command}"
+```
+
+# Mocking XHR Requests
+
+- What is XHR ?
+  - Async network request, http request
+  - Kitchen Sink sample app
+- What can we do with it?
+  - HTTP Status code can be verified, though the reponse can not be validated due to the dynamic nature of the response
+- Mocking response to an HTTP request
+  - Cypress can inrerrupt the request and give fake response itself without sending the request to the real backend server.
+
+## cy.server()
+
+- start listener
+
+## cy.route()
+
+- listen to specific request/response
+
+## Test
+
+- Update comment 404 response
+  - start server using `cy.server()`
+  - listen to the requst and configure fake response using `cy.route()`
+  - click on Post Comment button
+
+## API Testing
+
+- Cypress can also send netwrok requests
+- `cy.request()`
+
+Example:
+
+Add Book API
+
+url - http://216.10.245.166
+
+method - POST
+
+body:
+
+```json
+{
+  "name": "A Sample Book",
+  "isbn": "ajfa-87230",
+  "aisle": "227",
+  "author": "John Foe"
+}
+```
+
+output expected:
+
+```json
+{
+  "Msg": "Successfully Added",
+  "ID": "bcd227"
+}
+```
