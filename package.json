@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "test": "cypress run",
+    "testHeaded": "npm run cy:run -- --headed",
+    "open": "cypress open",
+    "testChrome": "npm run cy:run:headed -- --browser chrome",
+    "greenCartTest": "npm run test -- --spec cypress/integration/examples/green-cart/*"
   },
   "keywords": [],
   "author": "",

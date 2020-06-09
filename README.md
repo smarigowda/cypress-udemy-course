@@ -400,6 +400,8 @@ Cypress.config({ defaultCommandTimeout: 3000 });
 
 - Cypress takes screenshot when test failes. No custom code required
 
+# Test Report
+
 ## Cypress Dashboard
 
 - Login to Dashboard
@@ -464,3 +466,13 @@ Cypress.config({ defaultCommandTimeout: 3000 });
 - Generate a combined HTML report from the mochawesome.json file using the https://github.com/adamgruber/mochawesome-report-generator
 
 `npx marge mochawesome.json`
+
+# npm Scripts and Jenkins Integration
+
+```js
+  "scripts": {
+    "cy:run": "cypress run",
+    "cy:run:headed": "npm run cy:run -- --headed",
+    "cy:open": "cypress open"
+  },
+```
