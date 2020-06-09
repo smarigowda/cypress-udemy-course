@@ -8,7 +8,8 @@
     "testHeaded": "npm run cy:run -- --headed",
     "open": "cypress open",
     "testChrome": "npm run cy:run:headed -- --browser chrome",
-    "greenCartTest": "npm run test -- --spec cypress/integration/examples/green-cart/*"
+    "greenCartTest": "npm run test -- --spec cypress/integration/examples/green-cart/*",
+    "recordDashboardTest": "npm run test -- --record --key 54a6667a-efb9-4d7d-af95-9f49ac8f6ade"
   },
   "keywords": [],
   "author": "",
