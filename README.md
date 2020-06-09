@@ -545,7 +545,7 @@ Example:
 
 Add Book API
 
-url - http://216.10.245.166
+url - `http://216.10.245.166/Library/Addbook.php`
 
 method - POST
 
