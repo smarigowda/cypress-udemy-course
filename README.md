@@ -1,5 +1,7 @@
 # Onboarding
 
+My email: santosharakere@gmail.com
+
 ## Install and Setup
 
 `npm install cypress`
@@ -22,17 +24,17 @@ Pass the command line option `--headed` to open the browser when running the tes
 
 Example:
 
-`npm run cy:run -- --headed`
+`npm run test -- --headed`
 
 `git tag run-test-on-commandline; git push origin run-test-on-commandline`
 
 ## Run on a specific browsers
 
-`npm run cy:run -- --headed --browser=chrome`
+`npm run test -- --headed --browser=chrome`
 
-`npm run cy:run -- --headed --browser=firefox`
+`npm run test -- --headed --browser=firefox`
 
-`npm run cy:run -- --headed --browser=edge`
+`npm run test -- --headed --browser=edge`
 
 ## Overriding default configurations
 
@@ -51,7 +53,7 @@ id selector ex: `#name`
 attribute selector `input[data-id=hjuh78-oiujh7-987uhy-iiuyty7]`  
 nth-child selector `td:nth-child(2)`
 
-Cypress Plugin to Locate Elements
+Cypress Locator Plugin to locate elements
 
 ## Intellisense
 
@@ -207,7 +209,7 @@ Cypress Auto-Accepts popups.
 ## Browser Events
 
 Cypress can listen to browser events.
-We can get the `text` of alert or conirm popups and validate them.
+We can get the `text` of alert or the text of conirm popups and validate them.
 
 ## Child Tabs
 
@@ -238,6 +240,8 @@ Cypress does not support visiting Cross Domain url.
 ## Frames
 
 Install npm package `cypress-iframe`
+
+`npm install --save-dev cypress-iframe`
 
 # Framework Building
 
@@ -531,10 +535,11 @@ npm run "${command}"
 
 ## Test
 
-- Update comment 404 response
+- To test the `Update Comment` feature with 404 response
   - start server using `cy.server()`
   - listen to the requst and configure fake response using `cy.route()`
   - click on Post Comment button
+  - validate the response and the text displayed on the browser
 
 ## API Testing
 
