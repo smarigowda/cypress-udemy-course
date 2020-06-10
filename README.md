@@ -20,7 +20,7 @@ Example:
 
 `npm run test -- --headed`
 
-## Run on a specific browsers
+## Run on a specific browser
 
 `npm run test -- --headed --browser=chrome`
 
@@ -49,13 +49,13 @@ Cypress Locator Plugin to locate elements
 
 ## Intellisense
 
-Use tripple slash directives which is a TypeScript concept. It tells TypeScript compiler to include additional files in the compilation process.
+Use tripple slash directives which is a TypeScript concept. It tells TypeScript compiler to include additional files in the compilation process. Which in turn will provide intellisense.
 
 `/// <reference types="Cypress" />`
 
 ## Assertions
 
-Cypress comes with its own assertion methods.
+Cypress comes with its own assertion methods, which is based on Chai assertion library.
 
 Example:
 
@@ -69,9 +69,9 @@ cy.get(".products .product").should("have.length", 4);
 
 Cypress automatically runs the test when we save the test.
 
-## Time Travel
+## Time Travel, Before & After Screenshots
 
-## Before & After Screenshots
+Cypress has time travel feature. With this for each step - we can go back/ forward, see before/ after screenshots, detailed logs and error messages.
 
 ## Debugging
 
